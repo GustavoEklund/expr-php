@@ -1,0 +1,49 @@
+{
+    "name": "thenrise/bank-pdb",
+    "description": "Banco Digital PDB",
+    "type": "project",
+    "license": "Copyright",
+    "authors": [
+        {
+            "name": "Gustavo Eklund",
+            "email": "gustavo.eklund@thenrise.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+	  	"doctrine/orm": "^2.6.2",
+	  	"symfony/yaml": "2.*",
+        "firebase/php-jwt": "^5.2",
+      	"ext-pdo": "*",
+	  	"ext-json": "*",
+        "doctrine/migrations": "^3.0",
+        "vlucas/phpdotenv": "^5.1",
+        "ramsey/uuid": "^4.1",
+        "ramsey/uuid-doctrine": "^1.6"
+    },
+	"require-dev": {
+	  	"roave/security-advisories": "dev-master",
+        "phpunit/phpunit": "^6.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"Classes\\": "src/Classes/",
+			"Controllers\\": "src/Controllers/",
+			"Entities\\": "src/Entities/",
+			"Interfaces\\": "src/Interfaces/",
+			"Migrations\\": "src/Migrations/",
+			"Models\\": "src/Models/",
+		  	"Repositories\\": "src/Repositories/",
+			"Traits\\": "src/Traits/",
+
+			"ClassesTests\\": "./tests/Classes/",
+			"ControllersTests\\": "./tests/Controllers/",
+			"TraitsTests\\": "./tests/Traits/"
+		}
+	},
+  	"scripts": {
+	  	"diff-db": "doctrine-migrations diff",
+	  	"migrate-db": "doctrine-migrations migrate",
+	  	"validate-db": "doctrine orm:validate-schema"
+	}
+}
