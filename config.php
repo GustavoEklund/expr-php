@@ -46,26 +46,3 @@ if (!isset($_ENV['PRODUCTION_MODE']) || (bool) $_ENV['PRODUCTION_MODE'] === true
 error_reporting(E_ALL);
 ini_set('log_errors', 1);
 ini_set('error_log', DIR_REQ.'log.txt');
-
-// Banco de dados
-define('DATABASE', [
-	'sgdb' => 'mysql',
-	'port' => '3306',
-
-	'host' => '127.0.0.1',
-	'name' => 'db_bank_pdb',
-	'user' => 'root',
-	'pass' => '',
-
-//	'host' => 'mysql1008.mochahost.com',
-//	'name' => 'essencia_db_banco_pdb',
-//	'user' => 'essencia_root',
-//	'pass' => 'eqpoda_123',
-
-	'options' => [
-		PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-		PDO::ATTR_ERRMODE => (bool) $_ENV['PRODUCTION_MODE'] ? PDO::ERRMODE_EXCEPTION : PDO::ERRMODE_SILENT,
-		PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-		PDO::ATTR_CASE => PDO::CASE_NATURAL
-	] // options
-]); // define
